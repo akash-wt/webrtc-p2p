@@ -52,9 +52,10 @@ export default function Sender() {
         };
 
         try {
+            // const stream = await navigator.mediaDevices.getDisplayMedia({video:true,audio:false}) //to display the screen
             const stream = await navigator.mediaDevices.getUserMedia({
-                video: { width: 1280, height: 720, frameRate: 60 },
-                audio: true,
+            video: { width: 1280, height: 720, frameRate: 60 },
+            audio: true,
             });
 
             stream.getTracks().forEach((track) => pc.addTrack(track, stream));

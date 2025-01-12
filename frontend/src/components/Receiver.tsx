@@ -24,10 +24,10 @@ export default function Receiver() {
 
         pc.ontrack = (event) => {
             const [stream] = event.streams;
-            if(videoRef.current)
-            videoRef.current.srcObject = stream;
+            if (videoRef.current)
+                videoRef.current.srcObject = stream; 
         };
-        
+
 
         socket.onmessage = async (event) => {
             const message = JSON.parse(event.data);
@@ -53,7 +53,7 @@ export default function Receiver() {
     return (
         <div>
             <div>Receiver</div>
-            <video autoPlay playsInline controls  ref={videoRef} style={{ width: "100%", height: "auto" }} ></video>
+            <video autoPlay playsInline controls ref={videoRef} style={{ width: "100%", height: "auto" }} ></video>
 
         </div>)
 }
